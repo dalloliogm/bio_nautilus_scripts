@@ -4,4 +4,8 @@
 # If the file has more than 1000 lines, only the first 1000 are showed
 # If the file has more than 18 columns or 1000 bytes, cut it
 
-head -n 1000 $1 |cut -f 1-18|cut -b 1000
+#head -n 1000 $* |cut -f 1-18|cut -b 1000 > /tmp/cuttedfile
+echo "$@" >/tmp/cuttedfile
+echo "$*" >>/tmp/cuttedfile
+gedit /tmp/cuttedfile &
+#rm /tmp/cuttedfile
